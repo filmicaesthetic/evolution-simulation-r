@@ -20,6 +20,6 @@ One of the models creates an "optimal location" for each mutation, where their s
 
 These visuals were created with the evolution_location.R script, and shows 3 distinct populations with different birth, death & mutation rates over 3,000 years.
 
-![Location-based evolution progression showing crowds of 3 different coloured dots seemingly moving toward their optimal location while population fluctuates over 3,000 years](outputs/evolution_137_3000.gif)
+![Location-based evolution progression showing crowds of 3 different coloured dots seemingly moving toward their optimal location while population fluctuates over 3,000 years. All dots start blue, but red and green mutations overtake by year 1,000. By the end, the population is almost entirely green.](outputs/evolution_137_3000.gif)
 
 ![Animated line chart showing change in populations for each mutation throughout the course of the simulation, starting off with 120 blue (no mutation), red and green (2 different mutations) overtaking at about 400 years. Red plateaus and declines from around 1,000 years while green continues to grow, ending up at around 800 by year 3000](outputs/population_137_3000.gif)

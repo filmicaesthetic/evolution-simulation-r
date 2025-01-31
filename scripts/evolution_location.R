@@ -2,7 +2,7 @@
 ## location-based
 ##
 
-pacman::p_load(dplyr, ggplot2, gganimate)
+pacman::p_load(dplyr, ggplot2)
 
 # set seed for reproducibility
 seed_num <- 137
@@ -188,6 +188,8 @@ all_all <- bind_rows(results_list)
 #   scale_color_manual(values = pal) +
 #   coord_equal()
 
+pacman::p_load(gganimate, av)
+
 # Create a separate data frame with one row per year
 year_labels <- all_all %>%
   distinct(year) %>%
@@ -207,7 +209,12 @@ evo_animation <- all_all |>
 
 evo_animation
 
+# save as gif
 anim_save(paste0("outputs/evolution_",seed_num, "_",max(all_all$year)+1,".gif"), evo_animation)
+
+# save as mp4
+b <- animate(evo_animation, renderer = av_renderer())
+anim_save(paste0("outputs/evolution_",seed_num, "_",max(all_all$year)+1,".mp4"), b)
 
 # see population levels oveer time
 pop_animation <- muts_by_year |>
@@ -220,4 +227,9 @@ pop_animation <- muts_by_year |>
   view_follow() +
   theme_minimal()
 
+# save as gif
 anim_save(paste0("outputs/population_",seed_num, "_",max(all_all$year)+1,".gif"), pop_animation)
+
+# save as mp4
+b <- animate(evo_animation, renderer = av_renderer())
+anim_save(paste0("outputs/evolution_",seed_num, "_",max(all_all$year)+1,".mp4"), b)
